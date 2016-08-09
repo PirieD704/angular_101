@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="styleApp" lang="en">
+<head>
+
+
+
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+<script type="text/javascript" src="ng-me.js"></script>
+
+<style>
+	.trueStoryClass{
+		font-weight: bold;
+		font-size:  30px;
+	}
+</style>
+
+
+</head>
+<body ng-controller="styleController">
+
+
+	<div id="wrapper" ng-style="{color: myColor}">
+		<div id="header">
+			<h1>Consider the following...</h1>
+		</div>
+		
+		<div class="item" ng-repeat="student in students track by $index">
+			Name: {{student.name}}
+			<input type="checkbox" ng-model="student.checked">
+			<span ng-show="student.checked" ng-class="{'trueStoryClass' : makeMeBig}">{{student.former}}</span>
+		</div>
+
+		<div class="color-input">
+			<input type="text" ng-model="myColor">
+		</div>
+
+		<label>Click me: <input type="checkbox" ng-model="checked" ng-unit="checked=true"></label>
+
+		<hr />
+		<span ng-show="checked">
+		show when checked
+		</span>
+		<hr />
+		<span ng-if="checked">
+			This is removed when the checkbox is unchecked.
+		</span>
+		<hr />
+		<div ng-hide="myColor=='red'">
+			I will hide if the color is set to red!
+		</div>
+		<button ng-click="makeMeBig=1">Make student descript big!</button>
+
+
+	</div>
+
+
+
+</body>
+</html>
