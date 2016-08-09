@@ -1,0 +1,40 @@
+c<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document2</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+<script type="text/javascript">
+	var myApp = angular.module('myApp', []);
+	myApp.controller('myController', function($scope){
+		$scope.firstName = "David";
+
+		// $scope.$watch('lastName', function(newValue, oldValue){
+		// 	console.log("The old value was " + oldValue + ". The new value is " + newValue);
+		// });
+
+		$scope.students =['Summer', 'JT', 'Jackson', 'Shirlette'];
+
+	});
+
+</script>
+
+</head>
+<body ng-controller="myController">
+	
+	First Name:<input type="text" ng-model="firstName">
+	Last Name:<input type="text" ng-model="lastName">
+
+	<div>
+		Welcome to my page, {{firstName}} {{lastName}}
+	</div>
+
+	{{students}}
+	<li ng-repeat="student in students">
+		{{student}}
+	</li>
+
+</body>
+</html>

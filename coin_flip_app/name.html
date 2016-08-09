@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="nameApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Name Practice</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+
+
+</head>
+<body ng-controller="sayHello">
+	
+<div class="container">
+	<div class="col-md-6">
+		Please input your name:
+		<input type="text" ng-model="name">
+	</div>
+	<div class="col-md-6" ng-show="name">
+		<div>
+			<h2>Hello {{name}}</h2>
+		</div>
+		<div>
+			<h3>Your name is {{name.length}} characters long!</h3>
+		</div>
+		
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+	
+// Write an app that asks the user to input his name in a text input,
+//  and immediately - as they type - says Hello back to them with 
+// their name and reports the number of characters in his name.
+
+var nameApp = angular.module('nameApp', [])
+nameApp.controller('sayHello', function($scope){
+
+
+
+	// $scope.$watch('$scope.name', function(){
+	// 	if ($scope.name.length > 0){
+	// 		$scope.bool = true;
+	// 	}else{
+	// 		$scope.bool = false;
+	// 	}
+	// })
+	// 	$scope.bool = true;
+	// }else{
+	// 	$scope.bool = false;
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>

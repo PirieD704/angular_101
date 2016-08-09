@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="yearBornApp" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>year born</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+<script type="text/javascript" src="yearBorn.js"></script>
+
+
+</head>
+<body ng-controller="yearBornController">
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<form ng-submit="yearMinusAge(age)">
+					<div>Enter your age</div>
+					<input type="text" ng-model="age">
+					<button class="btn btn-primary" type="submit">Submit</button>
+				</form>
+			</div>
+			<div class="col-md-12">
+				<h3>You were born in: {{year}} unless your birthday hasn't happened yet this year, in which case your were born in: {{year - 1}}</h3>
+			</div>
+		</div>
+	</div>	
+
+
+</body>
+</html>
